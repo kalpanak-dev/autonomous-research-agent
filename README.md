@@ -8,9 +8,4 @@ A single Gemini agent that runs its own ReAct-style loop: it chooses between `we
 3. `npm run dev`
 4. Open http://localhost:3000 (health check: http://localhost:5000/api/health)
 
-Each step is one Gemini request, so a run uses up to AGENT_MAX_STEPS requests (default 8).
 
-## Architecture
-React UI <-- SSE --> Express --> agent loop (src/backend/agent.ts)
-agent loop: Gemini decides -> tool call -> result fed back -> repeat -> finish_report
-tools (src/backend/tools.ts): Tavily search, page reader
